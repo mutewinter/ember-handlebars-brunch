@@ -42,7 +42,7 @@
     "node": ">=0.8.0"
   },
   "dependencies": {
-    "coffee-script": "1.6.2"
+    "coffee-script": "1.6.3"
   },
   "devDependencies": {
     "mocha": "1.9.0",
