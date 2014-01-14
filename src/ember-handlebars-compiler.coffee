@@ -6,7 +6,9 @@ module.exports = (->
   vm      = require 'vm'
   sysPath = require 'path'
 
-  compilerPath = sysPath.join __dirname, '..', 'vendor', 'ember-template-compiler.js'
+  compilerPath = sysPath.join(
+    __dirname, '..', 'vendor', 'ember-template-compiler.js'
+  )
   handlebarsPath = sysPath.join __dirname, '..', 'vendor', 'handlebars.js'
 
   compilerjs   = fs.readFileSync compilerPath, 'utf8'
@@ -51,7 +53,10 @@ module.exports = (->
     context.template = templateData
 
     # compile the handlebars template inside the vm context
-    vm.runInContext 'templatejs = exports.precompile(template).toString();', context
+    vm.runInContext(
+      'templatejs = exports.precompile(template).toString();',
+      context
+    )
 
-    context.templatejs;
+    context.templatejs
 )()
