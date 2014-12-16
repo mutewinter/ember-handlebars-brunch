@@ -54,7 +54,7 @@ module.exports = (->
 
     # compile the handlebars template inside the vm context
     vm.runInContext(
-      'templatejs = exports.precompile(template).toString();',
+      'templatejs = exports.precompile(template, false).toString();',
       context
     )
 
